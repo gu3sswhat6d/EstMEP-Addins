@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Built per runtime rather than as netstandard2.0: the Anthropic SDK's netstandard2.0 and net8.0
+         builds are not binary compatible (init-only setters), so each host needs the matching build. -->
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
+    <RootNamespace>EstMepAddins.DimensionChecker</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Anthropic" Version="12.53.0" />
+  </ItemGroup>
+
+</Project>

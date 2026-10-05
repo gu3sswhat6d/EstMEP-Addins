@@ -1,0 +1,19 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    # The add-in project needs FabricationAPI.dll from an ESTmep install, so CI builds and tests
+    # everything except that one project.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: dotnet test tests/DimensionChecker.Core.Tests
+      - run: dotnet build src/DimensionChecker.UI
+      - run: dotnet build src/DimensionChecker.UI -p:EstmepTargetFramework=net48

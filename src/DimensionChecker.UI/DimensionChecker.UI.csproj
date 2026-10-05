@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- WinForms dialogs. No reference to FabricationAPI.dll, so this builds anywhere. -->
+  <PropertyGroup>
+    <TargetFramework>$(EstmepTargetFramework)</TargetFramework>
+    <UseWindowsForms Condition="'$(TargetFramework)' != 'net48'">true</UseWindowsForms>
+    <RootNamespace>EstMepAddins.DimensionChecker.UI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DimensionChecker.Core\DimensionChecker.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net48'">
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+
+</Project>

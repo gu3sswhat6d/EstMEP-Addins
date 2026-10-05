@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <!-- ESTmep 2026 loads .NET 8 add-ins. If your ESTmep build is still on .NET Framework,
+         build with: dotnet build -p:EstmepTargetFramework=net48 -->
+    <EstmepTargetFramework Condition="'$(EstmepTargetFramework)' == ''">net8.0-windows</EstmepTargetFramework>
+    <!-- Lets the Windows-only projects compile on a non-Windows CI box. -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{105DC45C-1D9F-45F5-B11C-88EF39860F1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DimensionChecker.Core", "src\DimensionChecker.Core\DimensionChecker.Core.csproj", "{A3A2329C-672D-4DA3-BAE9-4A11DC3D5925}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{475BBD19-6FA1-4774-9124-3A912BC71D3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DimensionChecker.Core.Tests", "tests\DimensionChecker.Core.Tests\DimensionChecker.Core.Tests.csproj", "{8320F680-54A5-42FF-8F22-A0CC53EFC522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DimensionChecker.UI", "src\DimensionChecker.UI\DimensionChecker.UI.csproj", "{A2CA5234-2CF2-43F6-814D-D888677B40FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DimensionChecker.AddIn", "src\DimensionChecker.AddIn\DimensionChecker.AddIn.csproj", "{96B2EA98-E268-4D68-A808-EBE57C397306}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3A2329C-672D-4DA3-BAE9-4A11DC3D5925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A2329C-672D-4DA3-BAE9-4A11DC3D5925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A2329C-672D-4DA3-BAE9-4A11DC3D5925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A2329C-672D-4DA3-BAE9-4A11DC3D5925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8320F680-54A5-42FF-8F22-A0CC53EFC522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8320F680-54A5-42FF-8F22-A0CC53EFC522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8320F680-54A5-42FF-8F22-A0CC53EFC522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8320F680-54A5-42FF-8F22-A0CC53EFC522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2CA5234-2CF2-43F6-814D-D888677B40FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2CA5234-2CF2-43F6-814D-D888677B40FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2CA5234-2CF2-43F6-814D-D888677B40FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2CA5234-2CF2-43F6-814D-D888677B40FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B2EA98-E268-4D68-A808-EBE57C397306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B2EA98-E268-4D68-A808-EBE57C397306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B2EA98-E268-4D68-A808-EBE57C397306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B2EA98-E268-4D68-A808-EBE57C397306}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3A2329C-672D-4DA3-BAE9-4A11DC3D5925} = {105DC45C-1D9F-45F5-B11C-88EF39860F1F}
+		{8320F680-54A5-42FF-8F22-A0CC53EFC522} = {475BBD19-6FA1-4774-9124-3A912BC71D3C}
+		{A2CA5234-2CF2-43F6-814D-D888677B40FC} = {105DC45C-1D9F-45F5-B11C-88EF39860F1F}
+		{96B2EA98-E268-4D68-A808-EBE57C397306} = {105DC45C-1D9F-45F5-B11C-88EF39860F1F}
+	EndGlobalSection
+EndGlobal

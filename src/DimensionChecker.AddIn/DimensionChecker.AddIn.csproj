@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- The DLL you load into ESTmep. This is the only project that references FabricationAPI.dll. -->
+  <PropertyGroup>
+    <TargetFramework>$(EstmepTargetFramework)</TargetFramework>
+    <UseWindowsForms Condition="'$(TargetFramework)' != 'net48'">true</UseWindowsForms>
+    <RootNamespace>EstMepAddins.DimensionChecker.AddIn</RootNamespace>
+    <!-- Copy NuGet dependencies (Anthropic SDK etc.) next to the add-in so ESTmep can resolve them. -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+
+    <!-- Override with: dotnet build -p:FabricationApiPath="D:\Autodesk\Fabrication 2026\ESTmep\FabricationAPI.dll" -->
+    <FabricationApiPath Condition="'$(FabricationApiPath)' == '' And Exists('$(MSBuildThisFileDirectory)..\..\lib\FabricationAPI.dll')">$(MSBuildThisFileDirectory)..\..\lib\FabricationAPI.dll</FabricationApiPath>
+    <FabricationApiPath Condition="'$(FabricationApiPath)' == ''">C:\Program Files\Autodesk\Fabrication 2026\ESTmep\FabricationAPI.dll</FabricationApiPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DimensionChecker.Core\DimensionChecker.Core.csproj" />
+    <ProjectReference Include="..\DimensionChecker.UI\DimensionChecker.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FabricationAPI">
+      <HintPath>$(FabricationApiPath)</HintPath>
+      <!-- ESTmep already has it loaded; never ship a copy. -->
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+</Project>
